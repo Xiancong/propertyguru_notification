@@ -7,6 +7,11 @@ import time
 
 @dataclass
 class PropertyGuruCrawler:
+    api_url: str
+    headers: dict
+    base_params: List[list]
+    map_areas: List[list]
+    csv_path: str
     collected_ids: Set[int] = field(default_factory=set)
 
     def fetch_clusters(self, params: List[tuple]) -> None:
