@@ -20,8 +20,8 @@ def main():
     else:
         existing_df = pd.DataFrame(columns=['property ID', 'date'])
 
-    new_properties = crawler.detect_new_properties(existing_df)
-    crawler.save_properties(new_properties, existing_df)
+    new_properties = crawler.detect_new_properties(existing_df, csv_path)
+    crawler.save_properties(new_properties, existing_df, csv_path)
     crawler.print_new_links(new_properties)
 
 if __name__ == "__main__":
