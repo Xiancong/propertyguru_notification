@@ -37,7 +37,7 @@ class PropertyGuruCrawler:
         new_props['date'] = datetime.now().strftime('%Y-%m-%d')
         return new_props
 
-    def save_properties(self, new_df: pd.DataFrame, existing_df: pd.DataFrame) -> None:
+    def save_properties(self, new_df: pd.DataFrame, existing_df: pd.DataFrame, csv_path) -> None:
         combined = pd.concat([existing_df, new_df], ignore_index=True)
         combined.to_csv(csv_path, index=False)
         print(f"Saved updated dataset with {len(new_df)} new properties.")
