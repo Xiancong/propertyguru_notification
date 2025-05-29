@@ -9,8 +9,7 @@ import time
 class PropertyGuruCrawler:
     collected_ids: Set[int] = field(default_factory=set)
 
-    def fetch_clusters(self, api_url, base_params, headers, params: List[tuple]) -> None:
-        base_params = [[k, v] for k, v in base_params.items()]
+    def fetch_clusters(self, api_url, headers, base_params, params: List[tuple]) -> None:
         query_params = base_params + params
         print(headers)
         response = requests.get(api_url, params=query_params, headers=headers)
