@@ -12,8 +12,8 @@ def main():
     base_params = [[k,v] for k, v in get_config(config,"base_params","Base params not provided",True).items()]
     map_areas = get_config(config,"map_areas","No coordinates provided",True)
 
-    crawler = PropertyGuruCrawler(csv_path, api_url, headers, base_params, map_areas)
-    crawler.crawl()
+    crawler = PropertyGuruCrawler()
+    crawler.crawl(csv_path, api_url, headers, base_params, map_areas)
 
     if os.path.exists(csv_path):
         existing_df = pd.read_csv(csv_path)
