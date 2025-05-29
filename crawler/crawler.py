@@ -14,7 +14,7 @@ class PropertyGuruCrawler:
     csv_path: str
     collected_ids: Set[int] = field(default_factory=set)
 
-    def fetch_clusters(self, params: List[tuple]) -> None:
+    def fetch_clusters(self, api_url, base_params, headers, params: List[tuple]) -> None:
         query_params = base_params + params
         response = requests.get(api_url, params=query_params, headers=headers)
         time.sleep(1)
@@ -29,7 +29,7 @@ class PropertyGuruCrawler:
         for cluster in data.get('clusters', []):
             self.collected_ids.update(cluster.get('ids', []))
 
-    def crawl(self):
+    def crawl(self, map_areas):
         for area in map_areas:
             print(f"Fetching area: {area}")
             self.fetch_clusters(area)
