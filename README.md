@@ -14,5 +14,5 @@ A simple crawler that fetches property listing from PropertyGuru that meet the s
 1. Clone the repo:
    ```bash
    git clone https://github.com/Xiancong/propertyguru_notification.git
-   cd propertyguru-crawler
+   cd propertyguru_notification
 
