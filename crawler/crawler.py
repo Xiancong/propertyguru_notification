@@ -24,10 +24,10 @@ class PropertyGuruCrawler:
         for cluster in data.get('clusters', []):
             self.collected_ids.update(cluster.get('ids', []))
 
-    def crawl(self, map_areas):
+    def crawl(self, api_url, headers, base_params, map_areas):
         for area in map_areas:
             print(f"Fetching area: {area}")
-            self.fetch_clusters(area)
+            self.fetch_clusters(api_url, headers, base_params, area)
 
     def detect_new_properties(self, existing_df: pd.DataFrame) -> pd.DataFrame:
         new_df = pd.DataFrame(self.collected_ids, columns=['property ID'])
