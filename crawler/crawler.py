@@ -41,6 +41,6 @@ class PropertyGuruCrawler:
         combined.to_csv(csv_path, index=False)
         print(f"Saved updated dataset with {len(new_df)} new properties.")
 
-    def print_new_links(self, new_df: pd.DataFrame) -> None:
+    def print_new_links(self, new_df: pd.DataFrame, property_url_template) -> None:
         for property_id in new_df['property ID']:
             print(property_url_template.format(property_id=property_id))
