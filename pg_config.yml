@@ -1,0 +1,60 @@
+csv_path: C:\sample_path\properties.csv
+api_url: https://api.propertyguru.com/v1/map/cluster
+property_url_template: "https://www.propertyguru.com.sg/listing/{property_id}"
+
+headers:
+  authority: api.propertyguru.com
+  accept: "*/*"
+  user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.135 Safari/537.36
+  origin: https://www.propertyguru.com.sg
+  referer: https://www.propertyguru.com.sg/map-search?limit=20
+  accept-language: en-US,en;q=0.9
+  sec-fetch-site: cross-site
+  sec-fetch-mode: cors
+  sec-fetch-dest: empty
+
+base_params:
+  "region": sg
+  locale: en
+  limit: "20"
+  listing_type: sale
+  market: residential
+  property_type_code[]:
+    - 1R
+    - 2A
+    - 2I
+    - 2S
+    - 3A
+    - 3NG
+    - 3Am
+    - 3NGm
+    - 3I
+    - 3Im
+    - 3S
+    - 3STD
+    - 4A
+    - 4NG
+    - 4S
+    - 4I
+    - 4STD
+    - 5A
+    - 5I
+    - 5S
+    - 6J
+    - EA
+    - EM
+    - MG
+    - TE
+  property_type: H # condo = N, landed = L
+  minsize: "700"
+  maxsize: "1500"
+
+#map_areas:
+# AREA 1
+  - - [zoom, "20"]
+    - [sw, "1.3797,103.7610"]
+    - [ne, "1.3832,103.7651"]
+# AREA 2
+  - - [zoom, "20"]
+    - [sw, "1.3741,103.7617"]
+    - [ne, "1.3811,103.7699"]
