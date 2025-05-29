@@ -13,7 +13,7 @@ def main():
     map_areas = get_config(config,"map_areas","No coordinates provided",True)
 
     crawler = PropertyGuruCrawler()
-    crawler.crawl(csv_path, api_url, headers, base_params, map_areas)
+    crawler.crawl(api_url, headers, base_params, map_areas)
 
     if os.path.exists(csv_path):
         existing_df = pd.read_csv(csv_path)
