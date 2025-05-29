@@ -22,7 +22,7 @@ def main():
 
     new_properties = crawler.detect_new_properties(existing_df)
     crawler.save_properties(new_properties, existing_df, csv_path)
-    crawler.print_new_links(new_properties)
+    crawler.print_new_links(new_properties, property_url_template)
 
 if __name__ == "__main__":
     main()
