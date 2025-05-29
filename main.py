@@ -10,6 +10,7 @@ def main():
     api_url = get_config(config,"api_url","Please provide the API endpoint")
     headers = get_config(config,"headers","No headers provided",True)
     base_params = [[k,v] for k, v in get_config(config,"base_params","Base params not provided",True).items()]
+    print(type(base_params))
     map_areas = get_config(config,"map_areas","No coordinates provided",True)
 
     crawler = PropertyGuruCrawler()
