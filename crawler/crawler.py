@@ -31,6 +31,7 @@ class PropertyGuruCrawler:
 
     def detect_new_properties(self, existing_df: pd.DataFrame) -> pd.DataFrame:
         new_df = pd.DataFrame(self.collected_ids, columns=['property ID'])
+        property_count = len(self.collected_ids)
         merged_df = new_df.merge(existing_df, how='left', on='property ID')
         new_props = merged_df[merged_df['date'].isnull()].copy()
         new_props['date'] = datetime.now().strftime('%Y-%m-%d')
