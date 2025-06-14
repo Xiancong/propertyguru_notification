@@ -2,6 +2,7 @@ from crawler.config import load_config, get_config
 from crawler.crawler import PropertyGuruCrawler
 import os
 import pandas as pd
+from telegram import telegram_notification
 
 def main():
     config = load_config()
@@ -22,7 +23,7 @@ def main():
     else:
         existing_df = pd.DataFrame(columns=['property ID', 'date'])
 
-    new_properties = crawler.detect_new_properties(existing_df)
+    new_properties, property_count = crawler.detect_new_properties(existing_df)
     crawler.save_properties(new_properties, existing_df, csv_path)
     crawler.print_new_links(new_properties)
 
