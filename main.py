@@ -8,6 +8,8 @@ def main():
 
     csv_path = get_config(config,"csv_path","Please provide the path to the output CSV")
     api_url = get_config(config,"api_url","Please provide the API endpoint")
+    token = get_config(config,"token","Please provide the API endpoint")
+    chat_id = get_config(config,"chat_id","Please provide the API endpoint")
     headers = get_config(config,"headers","No headers provided",True)
     base_params = [[k,v] for k, v in get_config(config,"base_params","Base params not provided",True).items()]
     map_areas = get_config(config,"map_areas","No coordinates provided",True)
