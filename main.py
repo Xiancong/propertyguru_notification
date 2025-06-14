@@ -1,8 +1,8 @@
 from crawler.config import load_config, get_config
 from crawler.crawler import PropertyGuruCrawler
+from telegram import telegram_notification
 import os
 import pandas as pd
-from telegram import telegram_notification
 
 def main():
     config = load_config()
@@ -26,6 +26,9 @@ def main():
     new_properties, property_count = crawler.detect_new_properties(existing_df)
     crawler.save_properties(new_properties, existing_df, csv_path)
     crawler.print_new_links(new_properties)
+
+    alerts = telegram_notification(token, chat_id)
+    alerts.new_properties_notification(new_properties, property_count)
 
 if __name__ == "__main__":
     main()
