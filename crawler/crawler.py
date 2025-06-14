@@ -35,7 +35,7 @@ class PropertyGuruCrawler:
         merged_df = new_df.merge(existing_df, how='left', on='property ID')
         new_props = merged_df[merged_df['date'].isnull()].copy()
         new_props['date'] = datetime.now().strftime('%Y-%m-%d')
-        return new_props
+        return new_props, property_count
 
     def save_properties(self, new_df: pd.DataFrame, existing_df: pd.DataFrame, csv_path) -> None:
         combined = pd.concat([existing_df, new_df], ignore_index=True)
