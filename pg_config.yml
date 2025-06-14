@@ -49,7 +49,11 @@ base_params:
   minsize: "700"
   maxsize: "1500"
 
-#map_areas:
+# Add own telegram token and relevant chat_id
+token: "1456012345:AABaJ_XXzS24XXXX2R_XXXx_YaXXXXXsaXk"
+chat_id: "-477777777"
+
+map_areas:
 # AREA 1
   - - [zoom, "20"]
     - [sw, "1.3797,103.7610"]
