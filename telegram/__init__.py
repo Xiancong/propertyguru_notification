@@ -1,1 +1,1 @@
-from .telegram import telegram_notification
+from .telegram_bot import telegram_notification
